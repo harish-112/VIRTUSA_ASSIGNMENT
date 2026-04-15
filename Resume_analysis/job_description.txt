@@ -1,0 +1,51 @@
+JOB DESCRIPTION
+Position: Senior Full-Stack Developer
+Company: Enterprise Solutions Corp
+Location: Remote
+Salary: $120,000 - $150,000/year
+
+ABOUT THE ROLE
+We are seeking an experienced Senior Full-Stack Developer to join our growing engineering team. You will be responsible for designing, developing, and maintaining scalable web applications that serve millions of users. This is an excellent opportunity to work on cutting-edge technologies and mentor junior developers.
+
+KEY RESPONSIBILITIES
+- Design and develop microservices-based applications using Python and JavaScript
+- Create and optimize SQL and NoSQL database schemas
+- Build RESTful APIs and work with REST architecture principles
+- Implement automated testing and continuous integration pipelines
+- Collaborate with product managers and designers to define technical requirements
+- Mentor junior developers and conduct code reviews
+- Optimize application performance and scalability
+- Work with cloud platforms (AWS, GCP) for deployment and infrastructure
+
+REQUIRED QUALIFICATIONS
+- 5+ years of professional software development experience
+- Strong proficiency in Python and JavaScript
+- Experience with Django, Flask, or similar web frameworks
+- Solid understanding of SQL and NoSQL databases (PostgreSQL, MongoDB)
+- Experience with Docker and containerization
+- Familiarity with Git and version control systems
+- Strong problem-solving skills and attention to detail
+- Excellent communication and collaboration abilities
+
+PREFERRED QUALIFICATIONS
+- Experience with React or Vue.js for front-end development
+- AWS or cloud platform certification
+- Experience with microservices architecture
+- Knowledge of NLP or machine learning
+- Experience with Agile/Scrum methodologies
+- Contributions to open-source projects
+
+TECHNICAL STACK
+- Backend: Python, Django, FastAPI
+- Frontend: JavaScript, React
+- Databases: PostgreSQL, MongoDB
+- DevOps: Docker, Kubernetes, Jenkins
+- Cloud: AWS, Docker
+
+BENEFITS
+- Competitive salary and performance bonuses
+- Health insurance and 401(k) matching
+- Remote work flexibility
+- Professional development budget
+- Generous PTO policy
+- Collaborative and innovative work environment

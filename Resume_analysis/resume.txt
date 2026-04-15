@@ -1,0 +1,42 @@
+JOHN SMITH
+Email: john.smith@email.com | Phone: (555) 123-4567 | LinkedIn: linkedin.com/in/johnsmith
+
+PROFESSIONAL SUMMARY
+Experienced software developer with 5+ years of expertise in full-stack web development, Python programming, and database design. Proven track record of delivering scalable applications and leading development teams.
+
+PROFESSIONAL EXPERIENCE
+Senior Software Developer | Tech Solutions Inc. | Jan 2021 - Present
+- Designed and implemented microservices architecture using Python and Django
+- Led a team of 4 developers in agile environment
+- Improved application performance by 40% through optimization
+- Developed RESTful APIs using Flask and FastAPI
+- Managed SQL and NoSQL databases (PostgreSQL, MongoDB)
+
+Software Developer | Digital Systems Ltd. | Jun 2018 - Dec 2020
+- Built web applications using Python, JavaScript, and React
+- Implemented automated testing with pytest and unit tests
+- Collaborated with cross-functional teams for feature development
+- Database design and optimization for PostgreSQL
+
+Junior Developer | StartUp Innovations | Jan 2017 - May 2018
+- Maintained and enhanced existing web applications
+- Created basic Python scripts for data processing
+- Assisted with front-end development using HTML, CSS, JavaScript
+
+EDUCATION
+Bachelor of Science in Computer Science | State University | 2016
+
+TECHNICAL SKILLS
+- Languages: Python, JavaScript, Java, SQL
+- Frameworks: Django, Flask, FastAPI, React
+- Databases: PostgreSQL, MongoDB, MySQL
+- Tools: Git, Docker, AWS, Jenkins
+- Methodologies: Agile, Scrum, REST API Design
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect - Associate (2022)
+- Python Professional Certification (2019)
+
+PROJECT HIGHLIGHTS
+Resume Analyzer System: Built an intelligent resume parsing system using NLP to extract skills and experience
+Fare Calculator: Developed dynamic pricing algorithm for ride-sharing application with surge pricing logic

@@ -1,0 +1,63 @@
+RESUME ANALYSIS REPORT
+
+
+Overall Score: 64%
+
+Job Description Skills :
+
+ - agile
+ - aws
+ - collaboration
+ - communication
+ - devops
+ - django
+ - docker
+ - flask
+ - gcp
+ - git
+ - javascript
+ - js
+ - kubernetes
+ - microservices
+ - mongodb
+ - nlp
+ - postgresql
+ - problem solving
+ - python
+ - react
+ - rest
+ - restful
+ - scrum
+ - sql
+ - vue
+
+
+Skills Matched with Job Description :
+ - agile
+ - aws
+ - django
+ - docker
+ - flask
+ - git
+ - javascript
+ - microservices
+ - mongodb
+ - nlp
+ - postgresql
+ - python
+ - rest
+ - restful
+ - scrum
+ - sql
+
+
+Skills missing in your resume:
+  - collaboration
+  - communication
+  - devops
+  - gcp
+  - js
+  - kubernetes
+  - problem solving
+  - react
+  - vue
