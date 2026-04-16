@@ -2,7 +2,6 @@ import os
 from extractor import extraction, extracttext
 from analyzer import analysis
 
-
 def reportgeneration(analysis_result, output_file):
     
     report = []
@@ -12,21 +11,21 @@ def reportgeneration(analysis_result, output_file):
     report.append(f"\nOverall Score: {score}%")
 
     jd_skills = sorted(analysis_result['jd_skills'])
-    report.append(f"\nJob Description Skills :\n")
+    report.append(str(\nJob Description Skills :\n))
     for skill in jd_skills:
-        report.append(f" - {skill}")
+        report.append(" - "+str(skill))
     
     matched_skills = sorted(analysis_result['matched_skills'])
-    report.append(f"\n\nSkills Matched with Job Description :")
+    report.append(str(\n\nSkills Matched with Job Description :))
     if matched_skills:
         for skill in matched_skills:
-            report.append(f" - {skill}")
+            report.append(" - "+str(skill))
 
     missing_skills = sorted(analysis_result['missing_skills'])
-    report.append(f"\n\nSkills missing in your resume:")
+    report.append(str(\n\nSkills missing in your resume:))
     if missing_skills:
         for skill in missing_skills:
-            report.append(f"  - {skill}")
+            report.append(" - "+str(skill))
     else:
         report.append(" Your Resume looks great! All skills matched with the Job Description.")
     
@@ -50,7 +49,7 @@ def main():
         report = reportgeneration(analysis_result, outputfile) 
         print(f"\nReport saved to: {outputfile}")
     except Exception as e:
-        print(f"Error: {e}")
+        print(e)
 
 if __name__ == "__main__":
     main()
