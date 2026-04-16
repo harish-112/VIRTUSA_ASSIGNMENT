@@ -27,7 +27,9 @@ CREATE TABLE IF NOT EXISTS SalesTransactions (
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
 
+
 """REPORT 1: EXPIRING SOON Products expiring within 7 days with stock > 50"""
+    
 SELECT
     p.ProductID,
     p.ProductName,
@@ -41,7 +43,9 @@ WHERE p.ExpiryDate > CURRENT_DATE
   AND p.StockCount > 50
 ORDER BY p.ExpiryDate ASC;
 
+
 """REPORT 2: DEAD STOCK - Products with no sales in the last 60 days"""
+    
 SELECT
     p.ProductID,
     p.ProductName,
@@ -56,7 +60,9 @@ LEFT JOIN SalesTransactions st
 WHERE st.TransactionID IS NULL
 ORDER BY p.StockCount DESC;
 
+
 -- REPORT 3: REVENUE BY CATEGORY — LAST CALENDAR MONTH
+
 SELECT
     c.CategoryName,
     ROUND(SUM(st.QuantitySold * st.PriceAtSale), 2) AS TotalRevenue
@@ -67,3 +73,4 @@ WHERE YEAR(st.TransactionDate)=YEAR(CURRENT_DATE - INTERVAL 1 MONTH)
   AND MONTH(st.TransactionDate)=MONTH(CURRENT_DATE - INTERVAL 1 MONTH)
 GROUP BY c.CategoryID, c.CategoryName
 ORDER BY TotalRevenue DESC;    
+
