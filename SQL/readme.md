@@ -1,7 +1,7 @@
 # Retail Database SQL Script
 
 ## Overview
-This SQL script sets up a retail management database (`retail_db`) with three tables and three analytical reports to track products, sales, and inventory metrics.
+This SQL script sets up a retail management database (`retail_db`) with three tables and three analytical reports to track products, sales, and inventory metrics. I Have used concepts which was covered over the weeks and learnt through the mentor connect conducted by virtusa(Mr Ram Kumar sir)
 
 ---
 
@@ -11,9 +11,9 @@ This SQL script sets up a retail management database (`retail_db`) with three ta
 Stores product categories.
 
 ```sql
-CREATE TABLE Categories (
-    CategoryID   INTEGER PRIMARY KEY AUTOINCREMENT,
-    CategoryName TEXT NOT NULL
+CREATE TABLE IF NOT EXISTS Categories (
+    CategoryID   INT PRIMARY KEY AUTO_INCREMENT,
+    CategoryName VARCHAR(255) NOT NULL
 );
 ```
 
@@ -28,14 +28,14 @@ CREATE TABLE Categories (
 Stores product information including pricing, stock, and expiry dates.
 
 ```sql
-CREATE TABLE Products (
-    ProductID    INTEGER PRIMARY KEY AUTOINCREMENT,
-    ProductName  TEXT    NOT NULL,
-    CategoryID   INTEGER NOT NULL,
-    StockCount   INTEGER NOT NULL DEFAULT 0,
-    CostPrice    REAL    NOT NULL,
-    SellingPrice REAL    NOT NULL,
-    ExpiryDate   DATE    NOT NULL,
+CREATE TABLE IF NOT EXISTS Products (
+    ProductID    INT PRIMARY KEY AUTO_INCREMENT,
+    ProductName  VARCHAR(255) NOT NULL,
+    CategoryID   INT NOT NULL,
+    StockCount   INT NOT NULL DEFAULT 0,
+    CostPrice    DECIMAL(10, 2) NOT NULL,
+    SellingPrice DECIMAL(10, 2) NOT NULL,
+    ExpiryDate   DATE NOT NULL,
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 );
 ```
@@ -56,11 +56,11 @@ CREATE TABLE Products (
 Records individual sales transactions.
 
 ```sql
-CREATE TABLE SalesTransactions (
-    TransactionID   INTEGER PRIMARY KEY AUTOINCREMENT,
-    ProductID       INTEGER  NOT NULL,
-    QuantitySold    INTEGER  NOT NULL,
-    PriceAtSale     REAL     NOT NULL,
+CREATE TABLE IF NOT EXISTS SalesTransactions (
+    TransactionID   INT PRIMARY KEY AUTO_INCREMENT,
+    ProductID       INT NOT NULL,
+    QuantitySold    INT NOT NULL,
+    PriceAtSale     DECIMAL(10, 2) NOT NULL,
     TransactionDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
@@ -92,9 +92,9 @@ SELECT
     p.ExpiryDate
 FROM Products p
 JOIN Categories c ON c.CategoryID = p.CategoryID
-WHERE p.ExpiryDate >  DATE('now')              
-  AND p.ExpiryDate <= DATE('now', '+7 days')  
-  AND p.StockCount > 50                        
+WHERE p.ExpiryDate > CURRENT_DATE
+  AND p.ExpiryDate <= DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY)
+  AND p.StockCount > 50
 ORDER BY p.ExpiryDate ASC;
 ```
 
@@ -126,7 +126,7 @@ FROM Products p
 JOIN Categories c ON c.CategoryID = p.CategoryID
 LEFT JOIN SalesTransactions st
        ON st.ProductID = p.ProductID
-      AND st.TransactionDate >= DATE('now', '-60 days')
+      AND st.TransactionDate >= DATE_SUB(CURRENT_DATE, INTERVAL 60 DAY)
 WHERE st.TransactionID IS NULL
 ORDER BY p.StockCount DESC;
 ```
@@ -153,10 +153,10 @@ SELECT
     c.CategoryName,
     ROUND(SUM(st.QuantitySold * st.PriceAtSale), 2) AS TotalRevenue
 FROM SalesTransactions st
-JOIN Products p ON p.ProductID = st.ProductID
-JOIN Categories c ON c.CategoryID = p.CategoryID
-WHERE STRFTIME('%Y-%m', st.TransactionDate) 
-    = STRFTIME('%Y-%m', DATE('now', '-1 month'))
+JOIN Products p   ON p.ProductID   = st.ProductID
+JOIN Categories c ON c.CategoryID  = p.CategoryID
+WHERE YEAR(st.TransactionDate) = YEAR(CURRENT_DATE - INTERVAL 1 MONTH)
+  AND MONTH(st.TransactionDate) = MONTH(CURRENT_DATE - INTERVAL 1 MONTH)
 GROUP BY c.CategoryID, c.CategoryName
 ORDER BY TotalRevenue DESC;
 ```
