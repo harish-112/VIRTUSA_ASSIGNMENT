@@ -3,26 +3,26 @@ CREATE DATABASE retail_db;
 USE retail_db;
 
 CREATE TABLE IF NOT EXISTS Categories (
-    CategoryID   INTEGER PRIMARY KEY AUTOINCREMENT,
-    CategoryName TEXT NOT NULL
+    CategoryID   INT PRIMARY KEY AUTO_INCREMENT,
+    CategoryName VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Products (
-    ProductID    INTEGER PRIMARY KEY AUTOINCREMENT,
-    ProductName  TEXT    NOT NULL,
-    CategoryID   INTEGER NOT NULL,
-    StockCount   INTEGER NOT NULL DEFAULT 0,
-    CostPrice    REAL    NOT NULL,
-    SellingPrice REAL    NOT NULL,
-    ExpiryDate   DATE    NOT NULL,
+    ProductID    INT PRIMARY KEY AUTO_INCREMENT,
+    ProductName  VARCHAR(255) NOT NULL,
+    CategoryID   INT NOT NULL,
+    StockCount   INT NOT NULL DEFAULT 0,
+    CostPrice    DECIMAL(10, 2) NOT NULL,
+    SellingPrice DECIMAL(10, 2) NOT NULL,
+    ExpiryDate   DATE NOT NULL,
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 );
 
 CREATE TABLE IF NOT EXISTS SalesTransactions (
-    TransactionID   INTEGER PRIMARY KEY AUTOINCREMENT,
-    ProductID       INTEGER  NOT NULL,
-    QuantitySold    INTEGER  NOT NULL,
-    PriceAtSale     REAL     NOT NULL,
+    TransactionID   INT PRIMARY KEY AUTO_INCREMENT,
+    ProductID       INT NOT NULL,
+    QuantitySold    INT NOT NULL,
+    PriceAtSale     DECIMAL(10, 2) NOT NULL,
     TransactionDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
