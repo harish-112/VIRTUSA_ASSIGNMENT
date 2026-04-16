@@ -175,9 +175,9 @@ ORDER BY TotalRevenue DESC;
 
 | Function | Purpose |
 |----------|---------|
-| `DATE('now')` | Current date |
-| `DATE('now', '+7 days')` | Date 7 days from today |
-| `DATE('now', '-60 days')` | Date 60 days ago |
+| `CURRENT_DATE` | Current date |
+| `DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY)` | Date 7 days from today |
+| `DATE_SUB(CURRENT_DATE, INTERVAL 60 DAY)` | Date 60 days ago |
 | `STRFTIME('%Y-%m', date)` | Format date as YYYY-MM (year-month) |
 | `SUM()` | Sum aggregate function |
 | `ROUND(value, 2)` | Round to 2 decimal places |
