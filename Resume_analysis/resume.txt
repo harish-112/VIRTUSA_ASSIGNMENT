@@ -1,5 +1,5 @@
-JOHN SMITH
-Email: john.smith@email.com | Phone: (555) 123-4567 | LinkedIn: linkedin.com/in/johnsmith
+Harish
+Email: harish@email.com | Phone: (555) 123-4567 | LinkedIn: linkedin.com/in/harishh
 
 PROFESSIONAL SUMMARY
 Experienced software developer with 5+ years of expertise in full-stack web development, Python programming, and database design. Proven track record of delivering scalable applications and leading development teams.
