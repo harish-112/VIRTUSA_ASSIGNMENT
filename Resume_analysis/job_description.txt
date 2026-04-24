@@ -1,8 +1,8 @@
 JOB DESCRIPTION
 Position: Senior Full-Stack Developer
 Company: Enterprise Solutions Corp
-Location: Remote
-Salary: $120,000 - $150,000/year
+Location: on-site
+Salary: 12 lpa
 
 ABOUT THE ROLE
 We are seeking an experienced Senior Full-Stack Developer to join our growing engineering team. You will be responsible for designing, developing, and maintaining scalable web applications that serve millions of users. This is an excellent opportunity to work on cutting-edge technologies and mentor junior developers.
